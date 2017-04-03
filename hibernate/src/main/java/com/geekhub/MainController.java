@@ -59,7 +59,6 @@ public class MainController {
         car.setWheels(wheelsList);
         car.setEngine(engine1);
         carService.addCar(car);
-
         return carService.getAllCar().toString();
     }
 }
