@@ -27,15 +27,6 @@ public class MainController {
     @Autowired
     private EngineService engineService;
 
-    @RequestMapping("/delete")
-    @ResponseBody
-    public String delete(){
-        Car car = carService.getCarById(1L);
-        car.setNameCar("dfdd");
-        carService.updateCar(car);
-        return carService.getAllCar().toString();
-    }
-
     @RequestMapping("/")
     @ResponseBody
     public String addCar(){
