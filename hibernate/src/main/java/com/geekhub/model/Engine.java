@@ -11,7 +11,7 @@ public class Engine {
     private Long id;
 
     @Column(name = "capacity")
-    private Double engineСapacity;
+    private Double capacity;
 
     public Long getId() {
         return id;
@@ -21,19 +21,19 @@ public class Engine {
         this.id = id;
     }
 
-    public Double getEngineСapacity() {
-        return engineСapacity;
+    public Double getCapacity() {
+        return capacity;
     }
 
-    public void setEngineСapacity(Double engineСapacity) {
-        this.engineСapacity = engineСapacity;
+    public void setCapacity(Double capacity) {
+        this.capacity = capacity;
     }
 
     @Override
     public String toString() {
         return "Engine{" +
                 "id=" + id +
-                ", engineСapacity=" + engineСapacity +
+                ", capacity=" + capacity +
                 '}';
     }
 }

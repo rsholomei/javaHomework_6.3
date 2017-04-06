@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html   xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tyres</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="col-md-3" />
+<div class="col-md-6">
+    <div class="well bs-component">
+        <form class="form-horizontal" th:action="@{/tyres/add}" th:object="${tyres}" method="post">
+            <fieldset>
+                <legend>Add tyres</legend>
+                <div class="form-group">
+                    <label for="sizeTyres" class="col-md-2 control-label">Size</label>
+
+                    <div class="col-md-10">
+                        <input type="number" th:field="*{sizeTyres}" class="form-control" id="sizeTyres" placeholder="Size" required="required"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nameTyres" class="col-md-2 control-label">Name</label>
+
+                    <div class="col-md-10">
+                        <input type="text" th:field="*{nameTyres}" class="form-control" id="nameTyres" placeholder="Name" required="required"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>

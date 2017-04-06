@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html   xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Car</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="col-md-3" />
+<div class="col-md-6">
+    <div class="well bs-component">
+        <form class="form-horizontal" th:action="@{/car/add}" th:object="${car}" method="post">
+            <fieldset>
+                <legend>Add car</legend>
+                <div class="form-group">
+                    <label for="nameCar" class="col-md-2 control-label">Name</label>
+
+                    <div class="col-md-10">
+                        <input type="text" th:field="*{nameCar}" class="form-control" id="nameCar" placeholder="Name Car" required="required"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="wheels" class="col-md-2 control-label">Wheels</label>
+
+                    <div class="col-md-10">
+                        <input type="number" th:field="*{wheels}" class="form-control" id="wheels" placeholder="Wheels" required="required"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="engine" class="col-md-2 control-label">Engine</label>
+
+                    <div class="col-md-10">
+                        <input type="number" th:field="*{engine}" class="form-control" id="engine" placeholder="Engine" required="required"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>

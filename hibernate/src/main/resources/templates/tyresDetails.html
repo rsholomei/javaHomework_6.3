@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="col-md-3" />
+<div class="col-md-6">
+    <div class="well bs-component">
+            <fieldset>
+                <legend>Tyres Details</legend>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Tyres Id</label>
+
+                    <div class="col-md-10">
+                        <p class="form-control-static" th:text="${tyres.id}">Id</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Size</label>
+
+                    <div class="col-md-10">
+                        <p class="form-control-static" th:text="${tyres.sizeTyres}">Size</p></div>
+                    </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Name</label>
+
+                    <div class="col-md-10">
+                        <p class="form-control-static" th:text="${tyres.nameTyres}">Name</p></div>
+                    </div>
+            </fieldset>
+    </div>
+</div>
+</body>
+</html>

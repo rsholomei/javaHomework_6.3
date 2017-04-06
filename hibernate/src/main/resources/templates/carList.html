@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="col-md-3" />
+<div class="col-md-6">
+    <div class="well bs-component">
+        <table class="table">
+            <thead class="thead-inverse">
+            <tr>
+                <th>Id</th>
+                <th>Name car</th>
+                <th>Wheels</th>
+                <th>Engine</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${car}">
+                <td th:text="${c.id}">Id</td>
+                <td th:text="${c.nameCar}">Name</td>
+                <td th:text="${c.wheels}">Wheels</td>
+                <td th:text="${c.engine.capacity}">Engine Capacity</td>
+                <td>
+                    <a th:href="@{/car/delete/} + ${{c.id}}" class="btn btn-danger">Delete</a>
+                    <a th:href="@{/car/update/} + ${{c.id}}" class="btn btn-primary">Update</a>
+                    <a th:href="@{/car/details/} + ${{c.id}}" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <button onclick="location.href='/car/add'" class="btn btn-success">Add</button>
+    </div>
+</div>
+</body>
+</html>

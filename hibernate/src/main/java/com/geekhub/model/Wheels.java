@@ -15,7 +15,7 @@ public class Wheels{
     private Tyres tyres;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "car_id", nullable = false)
+    @JoinColumn(name = "car_id", nullable = true)
     private Car car;
 
     public Long getId() {
